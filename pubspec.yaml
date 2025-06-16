@@ -12,16 +12,46 @@ dependencies:
   flutter:
     sdk: flutter
 
+  http: ^1.1.0
+  intl: ^0.18.1
+  logger: ^2.0.1
+  url_launcher: ^6.1.12
+
+  animated_splash_screen: ^1.3.0
+
+  flutter_native_splash: ^2.4.1
+  flutter_launcher_icons: ^0.14.3
+
+
+
+
+  # icon
   iconsax: ^0.0.8
   cupertino_icons: ^1.0.6
+
   # state management
-  get: ^4.6.5
+  flutter_riverpod: ^2.6.1
+  go_router: ^15.1.2
+
+  get_storage: ^2.1.1
+
+  dartz: ^0.10.1
+
+
+  carousel_slider: ^4.2.1
+  smooth_page_indicator: ^1.1.0
+
+
+  # json
+  json_annotation: ^4.9.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^3.0.0
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
 
 
 flutter:
@@ -31,6 +61,10 @@ flutter:
     - assets/logo/
     - assets/icons/brands/
     - assets/images/
+    - assets/images/category/
+    - assets/images/banner/
+    - assets/images/product/
+    - assets/images/user/
 
   fonts:
     - family: Poppins
@@ -51,9 +85,21 @@ flutter:
         - asset: assets/fonts/Poppins-Bold.ttf
           weight: 800
 
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo/app_logo.png"
+  min_sdk_android: 21
+  remove_alpha_ios: true
   
-  
-  
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/logo/app_logo.png
+  android: true
+  ios: true
+  android_gravity: center
+  ios_content_mode: scaleAspectFit
+  fullscreen: true
   
 
   

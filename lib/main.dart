@@ -1,20 +1,21 @@
-import 'package:eshop/utils/theme/theme.dart';
+import 'package:eshop/utils/local_storage/storage_utilities.dart';
+import 'package:eshop/utils/logging/logger_manager.dart';
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() {
-  runApp(const App());
-}
+import 'app/app.dart';
 
-class App extends StatelessWidget {
-  const App({super.key});
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EshopLocalStorage.initialize();
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      themeMode: ThemeMode.system,
-      theme: EshopTheme.lightTheme,
-      darkTheme: EshopTheme.darkTheme,
-
-    );
+  if (kDebugMode) {
+    LoggerManager.enableLogging();
+  } else {
+    LoggerManager.disableLogging();
   }
+
+
+  runApp(const ProviderScope(child: App()));
 }

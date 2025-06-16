@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class EshopElevatedButtonTheme {
-  EshopElevatedButtonTheme._();
+class EshopBottomSheetTheme {
+  EshopBottomSheetTheme._();
 
   static BottomSheetThemeData lightBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
