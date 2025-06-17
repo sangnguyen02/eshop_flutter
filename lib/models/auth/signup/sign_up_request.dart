@@ -9,6 +9,7 @@ class SignUpRequest {
   final String phone;
   final String email;
   final String role;
+  final bool status;
 
 
   SignUpRequest({
@@ -18,6 +19,7 @@ class SignUpRequest {
     required this.phone,
     required this.email,
     required this.role,
+    required this.status,
 
   });
 

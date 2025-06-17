@@ -53,6 +53,8 @@ class SignInViewModel extends ChangeNotifier {
           (response) async {
         final token = response['data']['token'];
         await _ref.read(authServiceProvider).saveToken(token);
+        usernameController.clear();
+        passwordController.clear();
 
         router.go('/home');
 

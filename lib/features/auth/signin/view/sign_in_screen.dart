@@ -60,7 +60,7 @@ class SignInScreen extends ConsumerWidget {
                         decoration: InputDecoration(
                           prefixIcon: Icon(Iconsax.user, color: dark ? EshopColors.white : EshopColors.dark),
                           labelText: EshopTexts.username,
-                          labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+                          labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w500),
                         ),
                         validator: (value) {
                           if (value == null || value.trim().isEmpty) {
@@ -79,7 +79,7 @@ class SignInScreen extends ConsumerWidget {
                         decoration: InputDecoration(
                           prefixIcon: Icon(Iconsax.password_check, color: dark ? EshopColors.white : EshopColors.dark),
                           labelText: EshopTexts.password,
-                          labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+                          labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w500),
                           suffixIcon: IconButton(
                             icon: Icon(
                               vm.isPasswordVisible ? Iconsax.eye : Iconsax.eye_slash,
@@ -109,7 +109,7 @@ class SignInScreen extends ConsumerWidget {
                               final result = await vm.signIn();
                               result.fold(
                                     (error) => SnackBarUtils.showError(context, error),
-                                    (success) => SnackBarUtils.showSuccess(context, success),
+                                    (success) => SnackBarUtils.showSuccess(context, success)
                               );
                             }
                           },
@@ -122,12 +122,9 @@ class SignInScreen extends ConsumerWidget {
                               strokeWidth: 2,
                             ),
                           )
-                              : const Text(
+                              : Text(
                             EshopTexts.signIn,
-                            style: TextStyle(
-                              fontSize: EshopSizes.fontSizeSm,
-                              fontFamily: 'Poppins',
-                            ),
+                            style: Theme.of(context).textTheme.bodyMedium!.apply(color: EshopColors.white).copyWith(fontWeight: FontWeight.bold)
                           ),
                         ),
                       ),
@@ -170,9 +167,7 @@ class SignInScreen extends ConsumerWidget {
                             ),
                             TextButton(
                               onPressed: () {
-                                // vm.navigateToSignUp(); // Không cần context
                                 vm.router.push('/signup');
-                                // context.push(location)
                               },
                               style: ButtonStyle(
                                 overlayColor: WidgetStateProperty.resolveWith<Color?>(

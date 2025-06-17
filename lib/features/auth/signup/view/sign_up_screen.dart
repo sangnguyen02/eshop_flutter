@@ -37,14 +37,16 @@ class SignUpScreen extends ConsumerWidget {
 
               /// Form
               Form(
+                key: formKey,
                 child: Column(
                   children: [
                     /// Username
                     TextFormField(
+                      controller: vm.usernameController,
                       expands: false,
                       decoration: InputDecoration(
                         labelText: EshopTexts.username, prefixIcon: Icon(Iconsax.user_edit, color: dark ? EshopColors.white : EshopColors.dark),
-                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w500),
                       ),
                       validator: (value) {
                         if (value == null || value.trim().isEmpty) {
@@ -57,12 +59,17 @@ class SignUpScreen extends ConsumerWidget {
 
                     /// Password
                     TextFormField(
-                      obscureText: true,
+                      controller: vm.passwordController,
+                      obscureText: !vm.isPasswordVisible,
                       decoration: InputDecoration(
                         labelText: EshopTexts.password,
                         prefixIcon: Icon(Iconsax.password_check, color: dark ? EshopColors.white : EshopColors.dark),
-                        suffixIcon: Icon(Iconsax.eye_slash, color: dark ? EshopColors.white : EshopColors.dark),
-                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+                        suffixIcon: IconButton(
+                          icon: Icon(vm.isPasswordVisible ? Iconsax.eye : Iconsax.eye_slash,
+                            color: dark ? EshopColors.white : EshopColors.dark,),
+                          onPressed: vm.togglePasswordVisibility,
+                        ),
+                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w500),
                       ),
                       validator: (value) {
                         if (value == null || value.trim().isEmpty) {
@@ -75,10 +82,11 @@ class SignUpScreen extends ConsumerWidget {
 
                     /// Fullname
                     TextFormField(
+                      controller: vm.fullnameController,
                       expands: false,
                       decoration: InputDecoration(
                         labelText: EshopTexts.fullname, prefixIcon: Icon(Iconsax.user, color: dark ? EshopColors.white : EshopColors.dark),
-                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w500),
                       ),
                       validator: (value) {
                         if (value == null || value.trim().isEmpty) {
@@ -93,9 +101,10 @@ class SignUpScreen extends ConsumerWidget {
 
                     /// Phone
                     TextFormField(
+                      controller: vm.phoneController,
                       decoration: InputDecoration(
                         labelText: EshopTexts.phoneNo, prefixIcon: Icon(Iconsax.call, color: dark ? EshopColors.white : EshopColors.dark),
-                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w500),
                       ),
                       validator: (value) {
                         if (value == null || value.trim().isEmpty) {
@@ -108,9 +117,10 @@ class SignUpScreen extends ConsumerWidget {
 
                     /// Email
                     TextFormField(
+                      controller: vm.emailController,
                       decoration: InputDecoration(
                         labelText: EshopTexts.email, prefixIcon: Icon(Iconsax.direct, color: dark ? EshopColors.white : EshopColors.dark),
-                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w500),
                       ),
                       validator: (value) {
                         if (value == null || value.trim().isEmpty) {
@@ -127,10 +137,10 @@ class SignUpScreen extends ConsumerWidget {
                       dropdownColor: Colors.white,
                       decoration: InputDecoration(
                         labelText: 'Role',
-                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+                        labelStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w500),
                         prefixIcon: Icon(Iconsax.user, color: dark ? EshopColors.white : EshopColors.dark),
                       ),
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600, color: Colors.white),
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w500, color: Colors.white),
                       items: [
                         DropdownMenuItem(
                           value: 'manager',
@@ -142,7 +152,7 @@ class SignUpScreen extends ConsumerWidget {
                         ),
                       ],
                       onChanged: (value) {
-                        vm.setRole(value);
+                        vm.setRole(value!);
                       },
                       validator: (value) {
                         if (value == null) {
@@ -160,8 +170,8 @@ class SignUpScreen extends ConsumerWidget {
                             width: 24,
                             height: 24,
                             child: Checkbox(
-                                value: true,
-                                onChanged: (value) {}
+                                value: vm.agreeToTerms,
+                                onChanged: (value) => vm.toggleAgreeToTerms(value)
                             )
                         ),
                         const SizedBox(width: EshopSizes.spaceAfterCheckbox),
@@ -221,12 +231,9 @@ class SignUpScreen extends ConsumerWidget {
                             ),
                           )
 
-                              : const Text(
+                              : Text(
                             EshopTexts.createAcccount,
-                            style: TextStyle(
-                                fontSize: EshopSizes.fontSizeSm,
-                                fontFamily: 'Poppins'
-                            ),
+                            style: Theme.of(context).textTheme.bodyMedium!.apply(color: EshopColors.white).copyWith(fontWeight: FontWeight.bold)
                           )
                       ),
                     ),
