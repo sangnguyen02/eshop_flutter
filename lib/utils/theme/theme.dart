@@ -1,6 +1,7 @@
 import 'package:eshop/utils/theme/custom_themes/appbar_theme.dart';
 import 'package:eshop/utils/theme/custom_themes/bottom_sheet_theme.dart';
 import 'package:eshop/utils/theme/custom_themes/checkbox_theme.dart';
+import 'package:eshop/utils/theme/custom_themes/chip_theme.dart';
 import 'package:eshop/utils/theme/custom_themes/elevated_button_theme.dart';
 import 'package:eshop/utils/theme/custom_themes/outlined_button_theme.dart';
 import 'package:eshop/utils/theme/custom_themes/text_field_theme.dart';
@@ -24,6 +25,7 @@ class EshopTheme {
     inputDecorationTheme: EshopTextFormFieldTheme.lightInputDecorationTheme,
 
     checkboxTheme: EshopCheckboxTheme.lightCheckboxTheme,
+    chipTheme: EshopChipTheme.lightChipTheme,
 
     elevatedButtonTheme: EshopElevatedButtonTheme.lightElevatedButtonTheme,
     outlinedButtonTheme: EshopOutlinedButtonTheme.lightOutlinedButtonTheme
@@ -45,6 +47,7 @@ class EshopTheme {
     inputDecorationTheme: EshopTextFormFieldTheme.darkInputDecorationTheme,
 
     checkboxTheme: EshopCheckboxTheme.darkCheckboxTheme,
+    chipTheme: EshopChipTheme.darkChipTheme,
 
     elevatedButtonTheme: EshopElevatedButtonTheme.darkElevatedButtonTheme,
     outlinedButtonTheme: EshopOutlinedButtonTheme.darkOutlinedButtonTheme

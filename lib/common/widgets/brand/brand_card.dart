@@ -1,7 +1,5 @@
-import 'package:eshop/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/enums.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
@@ -48,7 +46,7 @@ class BrandCard extends StatelessWidget {
                 isNetworkImage: isNetworkImage,
                 imageUrl: brandImage,
                 backgroundColor: backgroundColor,
-                showBorder: showBorder,
+                showBorder: false,
                 // overlayColor: dark ? EshopColors.white : EshopColors.black,
               ),
             ),

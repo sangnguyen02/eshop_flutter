@@ -37,4 +37,21 @@ class EshopTexts {
   static const String homeAppbarTitle = "Shuttle Strike";
   static const String homeAppbarSubTitle = "Gear Up for Victory";
 
+  // Description Sample
+  static const String sampleDescription = "This powerful racket is used by many top international country players Yonex ASTROX 77 Pro racket is built using with Rotational Generator System. The counter balanced head adapts to each shot, helping you to control the drive and attack the opposition with increased acceleration, steeper angle and power on the smash. This racket helps you to lead the attack with increased power and control";
+
+  // Review Sample
+  static const String sampleReview = "This new racket actually feels different compared to the first version of the Astrox 77. I prefer this one more due to its stiffness and repulsion, everything is just nice.";
+  static const String sampleReply = "Thank you for the review.";
+
+
+  // Address Sample
+  static const String sampleAddress = "1 Đ.Võ Văn Ngân, Linh Chiểu, Thủ Đức, Hồ Chí Minh";
+  static const String sampleUserName = "Rick NGX";
+  static const String sampleAddressPhone = "(+84) 352 419 726";
+
+
+  static const String paymentTitle = "Payment Success";
+  static const String paymentSubTitle = "Thank you for your purchase! Your item will be ship soon.";
+
 }

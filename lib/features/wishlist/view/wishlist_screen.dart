@@ -23,7 +23,7 @@ class WishlistScreen extends ConsumerWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(EshopSizes.defaultSpace),
+          padding: const EdgeInsets.all(EshopSizes.defaultSpace),
           child: Column(
             children: [
               GridLayout(

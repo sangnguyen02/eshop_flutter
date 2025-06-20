@@ -1,13 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:eshop/models/auth/signup/sign_up_request.dart';
 import 'package:eshop/utils/logging/logger.dart';
-import 'package:eshop/utils/snackbar/snackbar_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../repos/auth_repo/auth_repository.dart';
-import '../../../../utils/constants/colors.dart';
-import '../../../../utils/helpers/helper_functions.dart';
 
 class SignUpViewModel extends ChangeNotifier {
   final AuthRepository _repo;

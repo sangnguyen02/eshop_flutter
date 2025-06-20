@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../common/widgets/image_text/vertical_image_text.dart';
 import '../../../models/category/category_model.dart';
@@ -22,8 +23,9 @@ class HomeCategories extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (_, index) {
             return VerticalImageText(
-                image: hardCodedCategories[index].image,
-                title: hardCodedCategories[index].name
+              image: hardCodedCategories[index].image,
+              title: hardCodedCategories[index].name,
+              onTap: () => context.push('/category'),
             );
           }
       ),

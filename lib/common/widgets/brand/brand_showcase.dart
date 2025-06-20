@@ -1,4 +1,3 @@
-import 'package:eshop/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -27,7 +26,7 @@ class BrandShowcase extends StatelessWidget {
       showBorder: true,
       borderColor: EshopColors.darkerGrey,
       backgroundColor: Colors.transparent,
-      padding: EdgeInsets.all(EshopSizes.md),
+      padding: const EdgeInsets.all(EshopSizes.md),
       margin: const EdgeInsets.only(bottom: EshopSizes.spaceBtwItems),
       child: Column(
           children: [
@@ -48,8 +47,8 @@ class BrandShowcase extends StatelessWidget {
       child: RoundedContainer(
         height: 100,
         backgroundColor: dark ? EshopColors.darkerGrey : EshopColors.light,
-        margin: EdgeInsets.only(right: EshopSizes.sm),
-        padding: EdgeInsets.all(EshopSizes.md),
+        margin: const EdgeInsets.only(right: EshopSizes.sm),
+        padding: const EdgeInsets.all(EshopSizes.md),
         child: Image(fit: BoxFit.contain, image: AssetImage(image)),
       ),
     );

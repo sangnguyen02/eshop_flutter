@@ -2,11 +2,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../../../common/widgets/custom_shapes/containers/circular_container.dart';
 import '../../../common/widgets/image/rounded_image.dart';
 import '../../../providers/features/home/home_provider.dart';
 import '../../../utils/constants/colors.dart';
-import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 
 class HomeBanner extends ConsumerWidget {

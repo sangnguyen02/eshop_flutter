@@ -3,7 +3,6 @@ import 'package:iconsax/iconsax.dart';
 import '../../models/category/category_model.dart';
 import '../../utils/constants/colors.dart';
 import '../../utils/constants/sizes.dart';
-import '../../models/product/product_model.dart';
 
 class CategoryCard extends StatelessWidget {
   final CategoryModel category;

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:get/get.dart';
 
 class EshopHelperFunctions {
   static Color? getColor(String value) {
@@ -27,19 +26,19 @@ class EshopHelperFunctions {
       case "gray":  // Xử lý cả "grey" và "gray"
         return Colors.grey;
       default:
-        return Colors.transparent;  // Nếu không có màu phù hợp, trả về transparent
+        return null;  // Nếu không có màu phù hợp, trả về transparent
     }
   }
 
-  static void showSnackBar(String message) {
-    ScaffoldMessenger.of(Get.context!).showSnackBar(
+  static void showSnackBar(BuildContext context, String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(message)),
     );
   }
 
-  static void showAlert(String title, String message) {
+  static void showAlert(BuildContext context, String title, String message) {
     showDialog(
-        context: Get.context!,
+        context: context,
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text(title),
@@ -73,16 +72,16 @@ class EshopHelperFunctions {
     return Theme.of(context).brightness == Brightness.dark;
   }
 
-  static Size screenSize() {
-    return MediaQuery.of(Get.context!).size;
+  static Size screenSize(BuildContext context) {
+    return MediaQuery.of(context).size;
   }
 
-  static double screenHeight() {
-    return MediaQuery.of(Get.context!).size.height;
+  static double screenHeight(BuildContext context) {
+    return MediaQuery.of(context).size.height;
   }
 
-  static double screenWidth() {
-    return MediaQuery.of(Get.context!).size.width;
+  static double screenWidth(BuildContext context) {
+    return MediaQuery.of(context).size.width;
   }
 
   static getFormattedDate(DateTime date, {String format = 'dd MMM yyyy'}) {

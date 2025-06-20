@@ -5,10 +5,10 @@ import 'package:eshop/common/widgets/texts/brand_title_with_verified_icon.dart';
 import 'package:eshop/common/widgets/texts/product_price.dart';
 import 'package:eshop/common/widgets/texts/product_title.dart';
 import 'package:eshop/utils/constants/colors.dart';
-import 'package:eshop/utils/constants/enums.dart';
 import 'package:eshop/utils/constants/image_strings.dart';
 import 'package:eshop/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/constants/sizes.dart';
@@ -24,10 +24,10 @@ class ProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = EshopHelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () => context.push('/product-detail'),
       child: Container(
         width: 180,
-        padding: EdgeInsets.all(1),
+        padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
           boxShadow: [ShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(EshopSizes.productImageRadius),
@@ -42,7 +42,7 @@ class ProductCardVertical extends StatelessWidget {
               backgroundColor: dark ? EshopColors.dark : EshopColors.light,
               child: Stack(
                 children: [
-                  const RoundedImage(imageUrl: EshopImages.yonex_astrox_77pro),
+                  const RoundedImage(imageUrl: EshopImages.yonex_astrox_77pro, applyImageRadius: true),
 
                   Positioned(
                     top: 12,
@@ -89,7 +89,7 @@ class ProductCardVertical extends StatelessWidget {
               children: [
                 const Padding(
                   padding: EdgeInsets.only(left: EshopSizes.sm),
-                  child: ProductPrice(price: '200.0'),
+                  child: ProductPrice(price: '256.0'),
                 ),
 
                 Container(

@@ -1,7 +1,5 @@
 import 'package:eshop/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import '../../../models/category/category_model.dart';
 import '../../../utils/constants/colors.dart';
 
 

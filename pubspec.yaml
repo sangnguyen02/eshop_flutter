@@ -38,13 +38,16 @@ dependencies:
   dartz: ^0.10.1
 
 
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.1.1
   smooth_page_indicator: ^1.1.0
+  readmore: ^3.0.0
+  flutter_rating_bar: ^4.0.1
 
 
   # json
   json_annotation: ^4.9.0
 
+  get: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -59,12 +62,13 @@ flutter:
 
   assets:
     - assets/logo/
-    - assets/icons/brands/
     - assets/images/
+    - assets/images/brand/
     - assets/images/category/
     - assets/images/banner/
     - assets/images/product/
     - assets/images/user/
+    - assets/images/payment/
 
   fonts:
     - family: Poppins

@@ -1,10 +1,7 @@
-import 'package:eshop/repos/brand_repo/brand_repository.dart';
-import 'package:eshop/repos/category_repo/category_repository.dart';
-import 'package:eshop/repos/product_repo/product_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import '../../../services/auth_service/auth_service.dart';
-import '../../../utils/helpers/helper_functions.dart';
 import '../../../utils/logging/logger.dart';
 import '../../../models/brand/brand_model.dart';
 import '../../../models/category/category_model.dart';
@@ -12,14 +9,15 @@ import '../../../models/product/product_model.dart';
 
 class HomeViewModel extends ChangeNotifier {
   final AuthService _authService;
+  final GoRouter router;
   // final ProductRepository _productRepository;
   // final CategoryRepository _categoryRepository;
   // final BrandRepository _brandRepository;
   final Ref _ref;
 
-  List<ProductModel> _products = [];
-  List<CategoryModel> _categories = [];
-  List<BrandModel> _brands = [];
+  final List<ProductModel> _products = [];
+  final List<CategoryModel> _categories = [];
+  final List<BrandModel> _brands = [];
   bool isLoading = false;
   int cartCount = 0;
 
@@ -35,6 +33,7 @@ class HomeViewModel extends ChangeNotifier {
 
   HomeViewModel(
       this._authService,
+      this.router,
       // this._productRepository,
       // this._categoryRepository,
       // this._brandRepository,

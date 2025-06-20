@@ -1,10 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import '../../repos/auth_repo/auth_repository.dart';
-import '../../repos/brand_repo/brand_repository.dart';
-import '../../repos/category_repo/category_repository.dart';
-import '../../repos/product_repo/product_repository.dart';
-import '../../router/router.dart';
 import '../services/services_provider.dart';
 
 final authRepositoryProvider = Provider<AuthRepository>((ref) {

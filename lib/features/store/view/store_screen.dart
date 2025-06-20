@@ -5,6 +5,7 @@ import 'package:eshop/common/widgets/custom_shapes/containers/search_container.d
 import 'package:eshop/common/widgets/layouts/grid_layout.dart';
 import 'package:eshop/common/widgets/texts/section_heading.dart';
 import 'package:eshop/features/store/widgets/category_tab.dart';
+import 'package:eshop/providers/features/store/store_provider.dart';
 import 'package:eshop/utils/constants/colors.dart';
 import 'package:eshop/utils/constants/image_strings.dart';
 import 'package:eshop/utils/constants/sizes.dart';
@@ -19,7 +20,7 @@ class StoreScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
+    final vm = ref.watch(storeViewModelProvider);
     final dark = EshopHelperFunctions.isDarkMode(context);
 
     return DefaultTabController(
@@ -55,7 +56,7 @@ class StoreScreen extends ConsumerWidget {
                       SectionHeading(
                         title: 'Feature Brands',
                         showActionButton: true,
-                        onPressed: () {},
+                        onPressed: () => vm.router.push('/all-brands'),
                       ),
                       const SizedBox(height: EshopSizes.spaceBtwItems / 1.5),
 
@@ -63,7 +64,7 @@ class StoreScreen extends ConsumerWidget {
                         itemCount: 4,
                         mainAxisExtent: 80,
                         itemBuilder: (_, index) {
-                          return const BrandCard(showBorder: false, brandTitle: 'Yonex', brandImage: EshopImages.yonex, brandNoOfProd: '(3 products)',);
+                          return const BrandCard(showBorder: true, brandTitle: 'Yonex', brandImage: EshopImages.yonex, brandNoOfProd: '(3 products)',);
                         }
                       )
 
@@ -87,7 +88,7 @@ class StoreScreen extends ConsumerWidget {
               ),
             ];
           },
-          body: TabBarView(
+          body: const TabBarView(
             children: [
               CategoryTab(),
               CategoryTab(),

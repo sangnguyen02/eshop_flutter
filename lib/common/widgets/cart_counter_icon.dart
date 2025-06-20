@@ -1,5 +1,5 @@
-import 'package:eshop/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../utils/constants/colors.dart';
@@ -19,7 +19,10 @@ class CartCounterIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        IconButton(onPressed: onPressed, icon: Icon(Iconsax.shopping_bag, color: iconColor)),
+        IconButton(
+          onPressed: () => context.push('/cart'),
+          icon: Icon(Iconsax.shopping_bag, color: iconColor)
+        ),
         Positioned(
           right: 0,
           child: Container(
