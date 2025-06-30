@@ -9,14 +9,18 @@ class CategoryModel {
   final String slug;
   @JsonKey(name: 'parentId')
   final int? parentId;
-  final String image;
+  final String? image; // Thêm nullable vì có thể null
+  final String? description; // Thêm trường
+  final bool? status; // Thêm trường
 
   CategoryModel({
     required this.id,
     required this.name,
     required this.slug,
     this.parentId,
-    required this.image
+    this.image,
+    this.description,
+    this.status,
   });
 
   factory CategoryModel.fromJson(Map<String, dynamic> json) => _$CategoryModelFromJson(json);

@@ -22,44 +22,45 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
 
     final vm = ref.watch(homeViewModelProvider);
+    final categories = vm.categories;
 
-    final List<CategoryModel> hardCodedCategories = [
-      CategoryModel(
-        id: 1,
-        name: 'Racket',
-        slug: 'racket',
-        parentId: null,
-        image: EshopImages.racket,
-      ),
-      CategoryModel(
-        id: 2,
-        name: 'Clothes',
-        slug: 'clothes',
-        parentId: null,
-        image: EshopImages.clothes,
-      ),
-      CategoryModel(
-        id: 3,
-        name: 'Shoes',
-        slug: 'shoes',
-        parentId: null,
-        image: EshopImages.shoes,
-      ),
-      CategoryModel(
-        id: 4,
-        name: 'Bag',
-        slug: 'bag',
-        parentId: null,
-        image: EshopImages.bag,
-      ),
-      CategoryModel(
-        id: 5,
-        name: 'Accessories',
-        slug: 'accessories',
-        parentId: null,
-        image: EshopImages.accessories,
-      ),
-    ];
+    // final List<CategoryModel> hardCodedCategories = [
+    //   CategoryModel(
+    //     id: 1,
+    //     name: 'Racket',
+    //     slug: 'racket',
+    //     parentId: null,
+    //     image: EshopImages.racket,
+    //   ),
+    //   CategoryModel(
+    //     id: 2,
+    //     name: 'Clothes',
+    //     slug: 'clothes',
+    //     parentId: null,
+    //     image: EshopImages.clothes,
+    //   ),
+    //   CategoryModel(
+    //     id: 3,
+    //     name: 'Shoes',
+    //     slug: 'shoes',
+    //     parentId: null,
+    //     image: EshopImages.shoes,
+    //   ),
+    //   CategoryModel(
+    //     id: 4,
+    //     name: 'Bag',
+    //     slug: 'bag',
+    //     parentId: null,
+    //     image: EshopImages.bag,
+    //   ),
+    //   CategoryModel(
+    //     id: 5,
+    //     name: 'Accessories',
+    //     slug: 'accessories',
+    //     parentId: null,
+    //     image: EshopImages.accessories,
+    //   ),
+    // ];
 
 
     return Scaffold(
@@ -89,7 +90,7 @@ class HomeScreen extends ConsumerWidget {
 
                         const SizedBox(height: EshopSizes.spaceBtwItems),
 
-                        HomeCategories(hardCodedCategories: hardCodedCategories),
+                        HomeCategories(categories: categories),
 
                       ],
                     ),

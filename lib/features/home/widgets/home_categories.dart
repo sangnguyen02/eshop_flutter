@@ -1,3 +1,4 @@
+import 'package:eshop/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -8,10 +9,10 @@ import '../../../models/category/category_model.dart';
 class HomeCategories extends StatelessWidget {
   const HomeCategories({
     super.key,
-    required this.hardCodedCategories,
+    required this.categories,
   });
 
-  final List<CategoryModel> hardCodedCategories;
+  final List<CategoryModel> categories;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +20,14 @@ class HomeCategories extends StatelessWidget {
       height: 96,
       child: ListView.builder(
           shrinkWrap: true,
-          itemCount: hardCodedCategories.length,
+          itemCount: categories.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (_, index) {
+            final category = categories[index];
             return VerticalImageText(
-              image: hardCodedCategories[index].image,
-              title: hardCodedCategories[index].name,
+              isNetworkImage: true,
+              image: category.image ?? EshopImages.racket,
+              title: category.name,
               onTap: () => context.push('/category'),
             );
           }

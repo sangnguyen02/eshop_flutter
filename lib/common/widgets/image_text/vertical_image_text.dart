@@ -1,4 +1,5 @@
 import 'package:eshop/utils/constants/sizes.dart';
+import 'package:eshop/utils/http/http_client.dart';
 import 'package:flutter/material.dart';
 import '../../../utils/constants/colors.dart';
 
@@ -13,7 +14,7 @@ class VerticalImageText extends StatelessWidget{
     this.textColor =  EshopColors.white,
     this.showTitle = false,
     this.onTap,
-
+    this.isNetworkImage = false,
   });
 
   final String image, title;
@@ -21,9 +22,15 @@ class VerticalImageText extends StatelessWidget{
   final Color? textColor;
   final bool showTitle;
   final void Function()? onTap;
+  final bool isNetworkImage;
 
   @override
   Widget build(BuildContext context) {
+
+    final String baseUrl = EshopHttpHelper.baseUrl;
+    final imageUrl = isNetworkImage ? '$baseUrl/$image' : image;
+
+
     return GestureDetector(
       onTap: onTap,
       child: Padding(
@@ -43,10 +50,22 @@ class VerticalImageText extends StatelessWidget{
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(EshopSizes.cardRadiusMd),
                     child: Image(
-                      image: AssetImage(image),
+                      image: isNetworkImage ? NetworkImage(imageUrl) : AssetImage(image) as ImageProvider,
                       fit: BoxFit.fill,
-                      errorBuilder: (context, error, stackTrace) =>
-                      const Icon(Icons.error),
+                      errorBuilder: (context, error, stackTrace) {
+                        print("Image load error: $error for URL: $imageUrl"); // Debug lỗi
+                        return const Icon(Icons.error);
+                      },
+                      loadingBuilder: (context, child, loadingProgress) {
+                        if (loadingProgress == null) return child;
+                        return Center(
+                          child: CircularProgressIndicator(
+                            value: loadingProgress.expectedTotalBytes != null
+                                ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
+                                : null,
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),

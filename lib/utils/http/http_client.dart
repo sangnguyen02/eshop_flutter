@@ -9,7 +9,7 @@ abstract class HttpClient {
 }
 
 class EshopHttpHelper implements HttpClient {
-  static const String _baseUrl = 'http://192.168.32.105:8000/api/v1';
+  static const String _baseUrl = 'http://192.168.32.103:8000/api/v1';
 
   static String get baseUrl => _baseUrl;
 

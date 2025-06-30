@@ -17,9 +17,9 @@ ProductModel _$ProductModelFromJson(Map<String, dynamic> json) => ProductModel(
       discountPrice: (json['discountPrice'] as num).toDouble(),
       stockQuantity: (json['stockQuantity'] as num).toInt(),
       status: json['status'] as String,
-      category: json['brand'] == null
+      category: json['category'] == null
           ? null
-          : CategoryModel.fromJson(json['brand'] as Map<String, dynamic>),
+          : CategoryModel.fromJson(json['category'] as Map<String, dynamic>),
       brand: json['brand'] == null
           ? null
           : BrandModel.fromJson(json['brand'] as Map<String, dynamic>),
@@ -40,7 +40,7 @@ Map<String, dynamic> _$ProductModelToJson(ProductModel instance) =>
       'discountPrice': instance.discountPrice,
       'stockQuantity': instance.stockQuantity,
       'status': instance.status,
-      'brand': instance.category?.toJson(),
+      'category': instance.category?.toJson(),
       'brand': instance.brand?.toJson(),
       'imageUrls': ProductModel._imageUrlsToJson(instance.imageUrls),
     };
