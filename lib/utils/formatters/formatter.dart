@@ -46,4 +46,10 @@ class EshopFormatter {
     }
     return formattedNumber.toString();
   }
+
+  static String formatError(String error) {
+    if (error.contains('401')) return 'Unauthorized. Please sign in again.';
+    if (error.contains('network')) return 'No internet connection. Please check your network.';
+    return 'An error occurred. Please try again.';
+  }
 }

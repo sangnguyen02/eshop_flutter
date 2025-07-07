@@ -23,7 +23,7 @@ class CategoryScreen extends ConsumerWidget {
           child: Column(
             children: [
               /// Banner
-              const RoundedImage(width: double.infinity, imageUrl: EshopImages.banner2, applyImageRadius: true),
+              const RoundedImage(width: double.infinity, image: EshopImages.banner2, applyImageRadius: true),
               const SizedBox(height: EshopSizes.spaceBtwSections),
 
               /// Sub-categories

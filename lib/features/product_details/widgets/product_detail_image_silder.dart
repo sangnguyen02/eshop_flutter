@@ -52,7 +52,7 @@ class ProductImageSlider extends StatelessWidget {
                         backgroundColor: dark ? EshopColors.dark : EshopColors.white,
                         border: Border.all(color: EshopColors.primaryColor),
                         padding: const EdgeInsets.all(EshopSizes.sm),
-                        imageUrl: EshopImages.yonex_astrox_77pro
+                        image: EshopImages.yonex_astrox_77pro
                     )
                 ),
               ),

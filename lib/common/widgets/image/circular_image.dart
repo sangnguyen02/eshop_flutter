@@ -47,6 +47,20 @@ class CircularImage extends StatelessWidget {
           fit: fit,
           image: isNetworkImage ? NetworkImage(imageUrl) : AssetImage(imageUrl) as ImageProvider,
           color: overlayColor,
+          errorBuilder: (context, error, stackTrace) {
+            print("Image load error: $error for URL: $imageUrl");
+            return const Icon(Icons.error);
+          },
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
+            return Center(
+              child: CircularProgressIndicator(
+                value: loadingProgress.expectedTotalBytes != null
+                    ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes!
+                    : null,
+              ),
+            );
+          },
         ),
       ),
     );

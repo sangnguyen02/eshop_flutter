@@ -9,9 +9,9 @@ class CategoryModel {
   final String slug;
   @JsonKey(name: 'parentId')
   final int? parentId;
-  final String? image; // Thêm nullable vì có thể null
-  final String? description; // Thêm trường
-  final bool? status; // Thêm trường
+  final String? image;
+  final String? description;
+  final bool? status;
 
   CategoryModel({
     required this.id,

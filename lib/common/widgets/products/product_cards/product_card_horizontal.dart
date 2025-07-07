@@ -42,7 +42,7 @@ class ProductCardHorizontal extends StatelessWidget {
                     width: 120,
                     height: 120,
                     child: RoundedImage(
-                      imageUrl: EshopImages.yonex_astrox_77pro,
+                      image: EshopImages.yonex_astrox_77pro,
                       applyImageRadius: true
                     )
                   ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/constants/enums.dart';
 import '../../../utils/constants/sizes.dart';
-import '../../../utils/helpers/helper_functions.dart';
 import '../custom_shapes/containers/rounded_container.dart';
 import '../image/circular_image.dart';
 import '../texts/brand_title_with_verified_icon.dart';
@@ -32,7 +31,6 @@ class BrandCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = EshopHelperFunctions.isDarkMode(context);
     return GestureDetector(
       onTap: onTap,
       child: RoundedContainer(
@@ -47,7 +45,6 @@ class BrandCard extends StatelessWidget {
                 imageUrl: brandImage,
                 backgroundColor: backgroundColor,
                 showBorder: false,
-                // overlayColor: dark ? EshopColors.white : EshopColors.black,
               ),
             ),
 

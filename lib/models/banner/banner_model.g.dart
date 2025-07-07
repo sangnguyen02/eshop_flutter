@@ -1,26 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'brand_model.dart';
+part of 'banner_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-BrandModel _$BrandModelFromJson(Map<String, dynamic> json) => BrandModel(
+BannerModel _$BannerModelFromJson(Map<String, dynamic> json) => BannerModel(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
-      slug: json['slug'] as String,
-      logoUrl: json['logoUrl'] as String?,
-      description: json['description'] as String?,
+      image: json['image'] as String,
       status: json['status'] as bool?,
     );
 
-Map<String, dynamic> _$BrandModelToJson(BrandModel instance) =>
+Map<String, dynamic> _$BannerModelToJson(BannerModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'slug': instance.slug,
-      'logoUrl': instance.logoUrl,
-      'description': instance.description,
+      'image': instance.image,
       'status': instance.status,
     };

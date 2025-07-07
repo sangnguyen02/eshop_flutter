@@ -9,12 +9,16 @@ class BrandModel {
   final String slug;
   @JsonKey(name: 'logoUrl')
   final String? logoUrl;
+  final String? description; // Thêm trường
+  final bool? status;
 
   BrandModel({
     required this.id,
     required this.name,
     required this.slug,
     this.logoUrl,
+    this.description,
+    this.status,
   });
 
   factory BrandModel.fromJson(Map<String, dynamic> json) => _$BrandModelFromJson(json);

@@ -42,7 +42,7 @@ class ProductCardVertical extends StatelessWidget {
               backgroundColor: dark ? EshopColors.dark : EshopColors.light,
               child: Stack(
                 children: [
-                  const RoundedImage(imageUrl: EshopImages.yonex_astrox_77pro, applyImageRadius: true),
+                  const RoundedImage(image: EshopImages.yonex_astrox_77pro, applyImageRadius: true),
 
                   Positioned(
                     top: 12,

@@ -4,7 +4,6 @@ import 'package:eshop/common/widgets/texts/product_price.dart';
 import 'package:eshop/common/widgets/texts/product_title.dart';
 import 'package:eshop/utils/constants/enums.dart';
 import 'package:eshop/utils/constants/image_strings.dart';
-import 'package:eshop/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/widgets/custom_shapes/containers/rounded_container.dart';
@@ -17,9 +16,6 @@ class ProductMetaData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = EshopHelperFunctions.isDarkMode(context);
-
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

@@ -21,7 +21,7 @@ class CartTile extends StatelessWidget {
       children: [
         /// Image
         RoundedImage(
-          imageUrl: EshopImages.yonex_astrox_77pro,
+          image: EshopImages.yonex_astrox_77pro,
           width: 60,
           height: 60,
           padding: const EdgeInsets.all(EshopSizes.sm),
